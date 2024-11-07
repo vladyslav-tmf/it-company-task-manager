@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -48,7 +49,9 @@ class Task(models.Model):
     task_type = models.ForeignKey(
         to=TaskType, on_delete=models.CASCADE, related_name="tasks"
     )
-    assignees = models.ManyToManyField(to=Worker, related_name="tasks")
+    assignees = models.ManyToManyField(
+        to=settings.AUTH_USER_MODEL, related_name="tasks"
+    )
 
     class Meta:
         ordering = ["deadline", "-priority"]
