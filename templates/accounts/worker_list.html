@@ -1,0 +1,58 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+  Worker List
+{% endblock title %}
+
+{% block content %}
+  <section class="pt-3 pb-4">
+
+    {% include "includes/search_form.html" %}
+
+    <div class="container">
+      <h2 class="text-center">Worker List</h2>
+      <div class="d-flex justify-content-center mb-3">
+        <a href="{% url "accounts:register" %}" class="btn btn-primary btn-sm">Register New Worker</a>
+      </div>
+      <div class="table-responsive">
+
+        {% if workers %}
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Username</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for worker in workers %}
+              <tr>
+                <td>{{ worker.username }}</td>
+                <td>{{ worker.first_name }}</td>
+                <td>{{ worker.last_name }}</td>
+                <td>{{ worker.position }}</td>
+                <td>
+                  <a href="{{ worker.get_absolute_url }}" class="btn btn-info btn-sm">Details</a>
+                  <a href="{% url "accounts:worker-update" pk=worker.id %}" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="{% url "accounts:worker-delete" pk=worker.id %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        {% else %}
+
+          <div class="alert alert-danger text-white text-center mt-4" role="alert">
+            No workers found. Click "REGISTER NEW WORKER" to add one!
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}
+  Edit Worker
+{% endblock title %}
+
+{% block content %}
+  <section class="pt-3 pb-4">
+    <div class="container">
+      <h2 class="text-center">{{ object|yesno:"Edit,Register" }} Worker</h2>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                  {{ form|crispy }}
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Update Worker
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

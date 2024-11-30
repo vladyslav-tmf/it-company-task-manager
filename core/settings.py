@@ -46,8 +46,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # third-party apps:
-    "widget_tweaks",
+    "crispy_bootstrap4",
+    "crispy_forms",
     "debug_toolbar",
+    "widget_tweaks",
 
     #user apps:
     "accounts",
@@ -82,6 +84,10 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 WSGI_APPLICATION = "core.wsgi.application"
 
