@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.urls import reverse
 from django.views.generic.dates import timezone_today
 
 
@@ -44,6 +45,9 @@ class Task(models.Model):
     def clean(self) -> None:
         if self.deadline < timezone_today():
             raise ValidationError("The deadline cannot be in the past.")
+
+    def get_absolute_url(self) -> str:
+        return reverse("tasks:task-detail", kwargs={"pk": self.pk})
 
     def __str__(self) -> str:
         return f"{self.name} (Deadline: {self.deadline}, Priority: {self.get_priority_display()})"
