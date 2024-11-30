@@ -10,5 +10,6 @@ urlpatterns = [
     path("workers/", views.WorkerListView.as_view(), name="worker-list"),
     path("<int:pk>/", views.WorkerDetailView.as_view(), name="worker-detail"),
     path("<int:pk>/update/", views.WorkerUpdateView.as_view(), name="worker-update"),
-    path("<int:pk>/delete/", views.WorkerDeleteView.as_view(), name="worker-delete")
+    path("<int:pk>/delete/", views.WorkerDeleteView.as_view(), name="worker-delete"),
+    path("<int:pk>/toggle-assign/", views.ToggleAssignToTaskView.as_view(), name="toggle-assign")
 ]

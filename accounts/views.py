@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.db.models import QuerySet
 from django.http import HttpRequest, HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
@@ -14,6 +14,7 @@ from django.views.generic import FormView
 from accounts.forms import WorkerRegisterForm, WorkerSearchForm, WorkerUpdateForm
 from accounts.services.email_service import EmailService
 from accounts.services.token_service import account_activation_token
+from tasks.models import Task
 
 User = get_user_model()
 
@@ -104,3 +105,18 @@ class WorkerUpdateView(LoginRequiredMixin, generic.UpdateView):
 class WorkerDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = User
     success_url = reverse_lazy("accounts:worker-list")
+
+
+class ToggleAssignToTaskView(LoginRequiredMixin, View):
+    @staticmethod
+    def post(request: HttpRequest, pk: int, *args, **kwargs) -> HttpResponseRedirect:
+        task = get_object_or_404(Task, id=pk)
+        worker = request.user
+
+        if task in worker.tasks.all():
+            worker.tasks.remove(task)
+
+        else:
+            worker.tasks.add(task)
+
+        return HttpResponseRedirect(reverse_lazy("tasks:task-detail", args=[pk]))
