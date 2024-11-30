@@ -1,0 +1,15 @@
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+
+
+class EmailService:
+    @staticmethod
+    def send_activation_email(username, domain, to_email, uid, token):
+        mail_subject = "Activation link has been sent to your email"
+        from_email = settings.EMAIL_HOST_USER
+
+        context = {"username": username, "domain": domain, "uid": uid, "token": token}
+
+        message = render_to_string("accounts/account_activation_email.html", context)
+        send_mail(mail_subject, message, from_email, [to_email], html_message=message)
