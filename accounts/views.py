@@ -1,14 +1,17 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites.shortcuts import get_current_site
+from django.db.models import QuerySet
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-from django.views import View
+from django.views import View, generic
 from django.views.generic import FormView
 
-from accounts.forms import WorkerRegisterForm
+from accounts.forms import WorkerRegisterForm, WorkerSearchForm, WorkerUpdateForm
 from accounts.services.email_service import EmailService
 from accounts.services.token_service import account_activation_token
 
@@ -56,3 +59,48 @@ class WorkerActivateView(View):
             user.save()
             messages.success(request, "Thank you for your email confirmation. Now you can sign in to your account.")
             return redirect("accounts:login")
+
+
+class WorkerListView(LoginRequiredMixin, generic.ListView):
+    model = User
+    paginate_by = 5
+    context_object_name = "workers"
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        context["search_form"] = WorkerSearchForm()
+
+        return context
+
+    def get_queryset(self) -> QuerySet[User]:
+        username = self.request.GET.get("username")
+
+        if username:
+            return User.objects.filter(username__icontains=username).select_related("position")
+
+        return User.objects.select_related("position")
+
+
+class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
+    model = User
+    queryset = User.objects.select_related("position")
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        worker = self.get_object()
+        tasks = worker.tasks.all()
+        context["completed_tasks"] = [task for task in tasks if task.is_completed]
+        context["pending_tasks"] = [task for task in tasks if not task.is_completed]
+
+        return context
+
+
+class WorkerUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = User
+    form_class = WorkerUpdateForm
+    success_url = reverse_lazy("accounts:worker-list")
+
+
+class WorkerDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = User
+    success_url = reverse_lazy("accounts:worker-list")
