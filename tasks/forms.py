@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
-from tasks.models import Position, Task
+from tasks.models import Position, Task, TaskType
 
 MAX_LENGTH = 255
 
@@ -28,7 +28,7 @@ class TaskForm(forms.ModelForm):
 
 class TaskTypeForm(forms.ModelForm):
     class Meta:
-        model = Task
+        model = TaskType
         fields = ["name"]
 
 
