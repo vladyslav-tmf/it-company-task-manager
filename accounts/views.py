@@ -61,6 +61,9 @@ class WorkerActivateView(View):
             messages.success(request, "Thank you for your email confirmation. Now you can sign in to your account.")
             return redirect("accounts:login")
 
+        messages.error(request, "Activation link is invalid or has already been used.")
+        return redirect("accounts:register")
+
 
 class WorkerListView(LoginRequiredMixin, generic.ListView):
     model = User
