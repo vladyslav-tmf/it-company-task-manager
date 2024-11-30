@@ -19,4 +19,3 @@ class TaskAdmin(admin.ModelAdmin):
     list_editable = ["is_completed"]
     search_fields = ["name"]
     list_filter = ["is_completed", "priority", "task_type", "deadline"]
-    list_select_related = ["task_type"]

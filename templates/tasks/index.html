@@ -1,0 +1,87 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}
+  Home Page
+{% endblock title %}
+
+{% block content %}
+
+  <section class="pt-3 pb-4" id="count-stats">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 z-index-2 border-radius-xl mt-n10 mx-auto py-3 blur shadow-blur">
+          <div class="row">
+            <div class="col-md-4 position-relative">
+              <div class="p-3 text-center">
+
+                <h1 class="text-gradient text-primary"><span id="state1" countTo="{{ total_tasks }}">0</span></h1>
+                <h5 class="m5-3">Task{{ total_workers|pluralize }}</h5>
+                <p class="text-sm">Number of tasks in the system</p>
+
+              </div>
+              <hr class="vertical dark">
+            </div>
+            <div class="col-md-4 position-relative">
+              <div class="p-3 text-center">
+
+                <h1 class="text-gradient text-primary"><span id="state2" countTo="{{ total_workers }}">0</span></h1>
+                <h5 class="m5-3">Worker{{ total_workers|pluralize }}</h5>
+                <p class="text-sm">Number of workers in the system</p>
+
+              </div>
+              <hr class="vertical dark">
+            </div>
+            <div class="col-md-4 position-relative">
+              <div class="p-3 text-center">
+
+                <h1 class="text-gradient text-primary"><span id="state3" countTo="{{ total_positions }}">0</span></h1>
+                <h5 class="m5-3">Position{{ total_positions|pluralize }}</h5>
+                <p class="text-sm">Number of positions in the system</p>
+
+              </div>
+              <hr class="vertical dark">
+            </div>
+            <div class="col-md-4 position-relative">
+              <div class="p-3 text-center">
+
+                <h1 class="text-gradient text-primary"><span id="state4" countTo="{{ total_task_types }}">0</span></h1>
+                <h5 class="m5-3">Task Type{{ total_task_types|pluralize }}</h5>
+                <p class="text-sm">Number of task types in the system</p>
+
+              </div>
+              <hr class="vertical dark">
+            </div>
+            <div class="col-md-4 position-relative">
+              <div class="p-3 text-center">
+
+                <h1 class="text-gradient text-primary"><span id="state5" countTo="{{ user_tasks }}">0</span></h1>
+                <h5 class="m5-3">Pending task{{ user_tasks|pluralize }}</h5>
+                <p class="text-sm">Number of pending tasks assigned to you</p>
+
+              </div>
+              <hr class="vertical dark">
+            </div>
+            <div class="col-md-4 position-relative">
+              <div class="p-3 text-center">
+
+                <h1 class="text-gradient text-primary"><span id="state6" countTo="{{ total_visits }}">0</span></h1>
+                <h5 class="m5-3">Visit{{ total_visits|pluralize }}</h5>
+                <p class="text-sm">Number of your visits to this page</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block javascripts %}
+  <script src="{% static "js/countup.min.js" %}"></script>
+
+  <script type="text/javascript" src="{% static "js/index.js" %}"></script>
+
+{% endblock javascripts %}
