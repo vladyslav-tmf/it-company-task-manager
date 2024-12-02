@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
     #user apps:
     "accounts",
-    "tasks"
+    "tasks",
 ]
 
 MIDDLEWARE = [

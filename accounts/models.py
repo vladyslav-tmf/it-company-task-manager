@@ -7,7 +7,13 @@ from tasks.models import Position
 
 class Worker(AbstractUser):
     email = models.EmailField(unique=True)
-    position = models.ForeignKey(Position, on_delete=models.CASCADE, related_name="workers", null=True, blank=True)
+    position = models.ForeignKey(
+        Position,
+        on_delete=models.CASCADE,
+        related_name="workers",
+        null=True,
+        blank=True
+    )
 
     class Meta:
         ordering = ["username"]

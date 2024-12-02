@@ -6,7 +6,14 @@ from django.utils.translation import gettext as _
 from django.views import generic
 from django.views.generic import TemplateView
 
-from tasks.forms import PositionForm, PositionSearchForm, TaskForm, TaskSearchForm, TaskTypeForm, TaskTypeSearchForm
+from tasks.forms import (
+    PositionForm,
+    PositionSearchForm,
+    TaskForm,
+    TaskSearchForm,
+    TaskTypeForm,
+    TaskTypeSearchForm,
+)
 from tasks.models import Position, Task, TaskType
 
 User = get_user_model()
@@ -35,7 +42,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
                 "total_positions": total_positions,
                 "total_task_types": total_task_types,
                 "total_visits": total_visits,
-                "user_tasks": user_tasks
+                "user_tasks": user_tasks,
             }
         )
 
