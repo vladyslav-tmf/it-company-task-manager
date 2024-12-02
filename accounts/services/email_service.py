@@ -6,7 +6,9 @@ from django.utils.translation import gettext as _
 
 class EmailService:
     @staticmethod
-    def send_activation_email(username: str, domain: str, to_email: str, uid: str, token: str) -> None:
+    def send_activation_email(
+        username: str, domain: str, to_email: str, uid: str, token: str
+    ) -> None:
         mail_subject = _("Activation link has been sent to your email")
         from_email = settings.EMAIL_HOST_USER
 

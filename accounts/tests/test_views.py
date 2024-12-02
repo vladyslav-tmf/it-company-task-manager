@@ -53,7 +53,9 @@ class WorkerActivateViewTest(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.user.refresh_from_db()
         self.assertFalse(self.user.is_active)
-        self.assertEqual(messages[0].message, "Activation link is invalid or has already been used.")
+        self.assertEqual(
+            messages[0].message, "Activation link is invalid or has already been used."
+        )
 
 
 class WorkerListViewTest(TestCase):

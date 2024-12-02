@@ -29,7 +29,9 @@ class WorkerRegisterView(FormView):
     form_class = WorkerRegisterForm
     template_name = "registration/register.html"
 
-    def _update_field_widget_attributes(self, field_name: str, placeholder: str) -> None:
+    def _update_field_widget_attributes(
+        self, field_name: str, placeholder: str
+    ) -> None:
         field = self.form.fields[field_name]
         field.widget.attrs.update(
             {
@@ -46,7 +48,6 @@ class WorkerRegisterView(FormView):
         self._update_field_widget_attributes("password2", _("Password check"))
 
         return self.form
-
 
     def form_valid(self, form: WorkerRegisterForm) -> HttpResponseRedirect:
         user = form.save(commit=False)
@@ -66,7 +67,9 @@ class WorkerRegisterView(FormView):
             token=token,
         )
 
-        messages.info(self.request, _("Please confirm your activation link in your email."))
+        messages.info(
+            self.request, _("Please confirm your activation link in your email.")
+        )
 
         return redirect("accounts:login")
 
@@ -87,10 +90,17 @@ class WorkerActivateView(View):
         elif user and account_activation_token.check_token(user, token):
             user.is_active = True
             user.save()
-            messages.success(request, _("Thank you for your email confirmation. Now you can sign in to your account."))
+            messages.success(
+                request,
+                _(
+                    "Thank you for your email confirmation. Now you can sign in to your account."
+                ),
+            )
             return redirect("accounts:login")
 
-        messages.error(request, _("Activation link is invalid or has already been used."))
+        messages.error(
+            request, _("Activation link is invalid or has already been used.")
+        )
         return redirect("accounts:register")
 
 
@@ -99,14 +109,16 @@ class WorkerLoginView(FormView):
     template_name = "registration/login.html"
     success_url = reverse_lazy("tasks:index")
 
-    def get_form(self, form_class = AuthenticationForm) -> AuthenticationForm:
+    def get_form(self, form_class=AuthenticationForm) -> AuthenticationForm:
         form = super().get_form(form_class)
         self._customize_field(form, "username", _("Username"))
         self._customize_field(form, "password", _("Password"))
         return form
 
     @staticmethod
-    def _customize_field(form: AuthenticationForm, field_name: str, placeholder: str) -> None:
+    def _customize_field(
+        form: AuthenticationForm, field_name: str, placeholder: str
+    ) -> None:
         field = form.fields[field_name]
         field.label = ""
         field.widget.attrs.update(
@@ -145,7 +157,9 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
         username = self.request.GET.get("username")
 
         if username:
-            return User.objects.filter(username__icontains=username).select_related("position")
+            return User.objects.filter(username__icontains=username).select_related(
+                "position"
+            )
 
         return User.objects.select_related("position")
 

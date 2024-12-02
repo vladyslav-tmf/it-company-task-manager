@@ -9,10 +9,18 @@ MAX_LENGTH = 255
 
 class TaskForm(forms.ModelForm):
     assignees = forms.ModelMultipleChoiceField(
-        queryset=get_user_model().objects.all(), widget=forms.CheckboxSelectMultiple
+        queryset=get_user_model().objects.all(),
+        widget=forms.CheckboxSelectMultiple,
     )
-    deadline = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}), label="Deadline")
-    priority = forms.ChoiceField(choices=Task.Priority.choices, label="Priority", initial=Task.Priority.STANDARD)
+    deadline = forms.DateField(
+        widget=forms.DateInput(attrs={"type": "date"}),
+        label="Deadline",
+    )
+    priority = forms.ChoiceField(
+        choices=Task.Priority.choices,
+        label="Priority",
+        initial=Task.Priority.STANDARD,
+    )
 
     class Meta:
         model = Task
@@ -29,6 +37,7 @@ class TaskForm(forms.ModelForm):
 
 class TaskTypeForm(forms.ModelForm):
     name = forms.CharField(label=_("Name"))
+
     class Meta:
         model = TaskType
         fields = ["name"]
@@ -36,6 +45,7 @@ class TaskTypeForm(forms.ModelForm):
 
 class PositionForm(forms.ModelForm):
     name = forms.CharField(label=_("Name"))
+
     class Meta:
         model = Position
         fields = ["name"]

@@ -18,6 +18,7 @@ from tasks.models import Position, Task, TaskType
 
 User = get_user_model()
 
+
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "tasks/index.html"
 

@@ -16,7 +16,7 @@ class WorkerAdmin(UserAdmin):
     list_filter = ["position"]
     list_select_related = ["position"]
 
-    def get_form(self, request, obj = None, **kwargs):
+    def get_form(self, request, obj=None, **kwargs):
         """
         Retrieves and customizes a form for a given request and object. The method
         obtains the form through the superclass method and modifies it by making
