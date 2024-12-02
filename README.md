@@ -16,6 +16,22 @@ A **Django-based project** designed to simplify task management processes in IT 
 * **Python:** 3.11 or newer.
 * **Operating System:** Compatible with Linux, macOS, and Windows.
 
+## Environment Variables
+
+The project requires certain environment variables to function properly. These should be defined in a `.env` file located in the root directory of the project. Below is a list of the key environment variables:
+
+- `EMAIL_HOST_USER`: The email address used for sending emails.
+- `EMAIL_HOST_PASSWORD`: The password for the specified email address.
+
+Create a `.env` file as shown in the `.env.sample` and replace `<email>` and `<password>` with your actual values.
+
+```dotenv
+EMAIL_HOST_USER=your_email@gmail.com
+EMAIL_HOST_PASSWORD=your_password
+```
+
+Ensure that the `.env` file is not included in your version control system (e.g., Git) as it contains sensitive information.
+
 ## Getting started
 
 Follow these steps to set up and run the project locally:
@@ -40,26 +56,24 @@ Follow these steps to set up and run the project locally:
     ```shell
     pip install -r requirements.txt
     ```
-4. Create a `.env` file in the root directory of the project (look at the `.env.sample`).
-Replace `<email>` with your email address and `<password>` with the corresponding password.
-5. Apply migrations to set up the database:
+4. Apply migrations to set up the database:
     ```shell
     python manage.py migrate
     ```
-6. Load example data (optional):
+5. Load example data (optional):
     ```shell
     python manage.py loaddata dataset.json
     ```
-7. Compile translation files (if using localization):
+6. Compile translation files (if using localization):
     ```shell
     python manage.py compilemessages -i "venv*"
     ```
     This command compiles `.po` files into `.mo` files, ignoring directory `venv`.
-8. Start the development server:
+7. Start the development server:
     ```shell
     python manage.py runserver
     ```
-9. Open your browser and visit: [http://127.0.0.1:8000](http://127.0.0.1:8000).
+8. Open your browser and visit: [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## Demo
 
