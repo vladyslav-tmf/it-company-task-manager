@@ -14108,7 +14108,17 @@ pre[class*="language-"] {
   cursor: help; }
 
 .language-select {
-  width: 150px; /* Задайте бажану ширину */
-}
+  width: 150px; }
+
+.logout-button {
+  background: none;
+  border: none; }
+
+.nav-link-icon {
+  display: inline-flex;
+  align-items: center; }
+
+.background-image-header {
+  background-image: url('/static/img/annie-spratt.jpg'); }
 
 /*# sourceMappingURL=soft-design-system.css.map */
