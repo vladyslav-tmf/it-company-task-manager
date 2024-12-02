@@ -1,10 +1,10 @@
-from django.urls import reverse
-from django.test import Client, TestCase
 from django.contrib.auth import get_user_model
+from django.test import Client, TestCase
+from django.urls import reverse
 from django.views.generic.dates import timezone_today
 
 from tasks.forms import TaskSearchForm
-from tasks.models import Task, Position, TaskType
+from tasks.models import Position, Task, TaskType
 
 User = get_user_model()
 
