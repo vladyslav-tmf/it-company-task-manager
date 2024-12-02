@@ -8,6 +8,8 @@ A **Django-based project** designed to simplify task management processes in IT 
 * **Status Monitoring:** Keep track of task statuses (e.g., **_Pending_**, **_Completed_**).
 * **User Authentication:** Login and registration functionality for Workers.
 * **Admin Panel:** Powerful admin panel for advanced managing.
+* **Email Confirmation:** Send a confirmation link to the user's email for account activation.
+* **Localization Support:** Switch the language of the website interface.
 
 ## System Requirements
 
@@ -48,11 +50,16 @@ Replace `<email>` with your email address and `<password>` with the correspondin
     ```shell
     python manage.py loaddata dataset.json
     ```
-7. Start the development server:
+7. Compile translation files (if using localization):
+    ```shell
+    python manage.py compilemessages -i "venv*"
+    ```
+    This command compiles `.po` files into `.mo` files, ignoring directory `venv`.
+8. Start the development server:
     ```shell
     python manage.py runserver
     ```
-8. Open your browser and visit: [http://127.0.0.1:8000](http://127.0.0.1:8000).
+9. Open your browser and visit: [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## Demo
 
