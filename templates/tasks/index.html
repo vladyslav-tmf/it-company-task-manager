@@ -17,7 +17,7 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state1" countTo="{{ total_tasks }}">0</span></h1>
-                <h5 class="m5-3"><a href="{% url "tasks:task-list" %}">
+                <h5 class="m5-3"><a href="{% url 'tasks:task-list' %}">
                   {% blocktrans count total_tasks=total_tasks %}Task{% plural %}Tasks{% endblocktrans %}
                 </a></h5>
                 <p class="text-sm">{% translate "Number of tasks in the system" %}</p>
@@ -29,7 +29,7 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state2" countTo="{{ total_workers }}">0</span></h1>
-                <h5 class="m5-3"><a href="{% url "accounts:worker-list" %}">
+                <h5 class="m5-3"><a href="{% url 'accounts:worker-list' %}">
                   {% blocktrans count total_workers=total_workers %}Worker{% plural %}Workers{% endblocktrans %}
                 </a>
                 </h5>
@@ -42,7 +42,7 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state3" countTo="{{ total_positions }}">0</span></h1>
-                <h5 class="m5-3"><a href="{% url "tasks:position-list" %}">
+                <h5 class="m5-3"><a href="{% url 'tasks:position-list' %}">
                   {% blocktrans count total_positions=total_positions %}Position{% plural %}Positions{% endblocktrans %}
                 </a>
                 </h5>
@@ -55,7 +55,7 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state4" countTo="{{ total_task_types }}">0</span></h1>
-                <h5 class="m5-3"><a href="{% url "tasks:task-type-list" %}">
+                <h5 class="m5-3"><a href="{% url 'tasks:task-type-list' %}">
                   {% blocktrans count total_task_types=total_task_types %}Task Type{% plural %}Task Types{% endblocktrans %}
                 </a></h5>
                 <p class="text-sm">{% translate "Number of task types in the system" %}</p>
@@ -67,7 +67,7 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state5" countTo="{{ user_tasks }}">0</span></h1>
-                <h5 class="m5-3"><a href="{% url "accounts:worker-detail" pk=user.id %}">
+                <h5 class="m5-3"><a href="{% url 'accounts:worker-detail' pk=user.id %}">
                   {% blocktrans count user_tasks=user_tasks %}Pending task{% plural %}Pending tasks{% endblocktrans %}
                 </a></h5>
                 <p class="text-sm">{% translate "Number of pending tasks assigned to you" %}</p>
@@ -95,7 +95,7 @@
 {% endblock content %}
 
 {% block javascripts %}
-  <script src="{% static "js/countup.min.js" %}"></script>
+  <script src="{% static 'js/countup.min.js' %}"></script>
 
   <script type="text/javascript" src="{% static "js/index.js" %}"></script>
 

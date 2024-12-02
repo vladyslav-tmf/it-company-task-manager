@@ -66,14 +66,14 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     {% translate "Don't have an account?" %}
-                    <a href="{% url "accounts:register" %}" class="text-primary text-gradient font-weight-bold">{% translate "Sign UP" %}</a>
+                    <a href="{% url 'accounts:register' %}" class="text-primary text-gradient font-weight-bold">{% translate "Sign UP" %}</a>
                   </p>
                 </div>
 
               {% else %}
                 <div class="card-body">
                   <p class="text-center">{% translate "You are already logged in. Go to" %}
-                    <a href="{% url "tasks:index" %}">{% translate "Home Page" %}</a>.</p>
+                    <a href="{% url 'tasks:index' %}">{% translate "Home Page" %}</a>.</p>
                 </div>
               {% endif %}
             </div>
@@ -82,7 +82,7 @@
           <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center">
               <div class="position-relative">
-                <img class="max-width-500 w-100 position-relative z-index-2" src="{% static "img/sign-up.png" %}">
+                <img class="max-width-500 w-100 position-relative z-index-2" src="{% static 'img/sign-up.png' %}">
               </div>
 
               <h4 class="mt-5 text-white font-weight-bolder">

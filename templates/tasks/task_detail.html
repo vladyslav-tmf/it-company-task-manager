@@ -53,9 +53,9 @@
                 {% endif %}
               </form>
 
-              <a href="{% url "tasks:task-update" pk=task.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
-              <a href="{% url "tasks:task-delete" pk=task.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
-              <a href="{% url "tasks:task-list" %}" class="btn btn-secondary btn-sm">{% translate "Back to List" %}</a>
+              <a href="{% url 'tasks:task-update' pk=task.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
+              <a href="{% url 'tasks:task-delete' pk=task.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+              <a href="{% url 'tasks:task-list' %}" class="btn btn-secondary btn-sm">{% translate "Back to List" %}</a>
 
             </div>
           </div>

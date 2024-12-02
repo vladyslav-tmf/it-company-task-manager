@@ -14,7 +14,7 @@
       <h2 class="text-center">{% translate "Position List" %}</h2>
 
       <div class="d-flex justify-content-center mb-3">
-        <a href="{% url "tasks:position-create" %}" class="btn btn-primary btn-sm mb-3">{% translate "Create New Position" %}</a>
+        <a href="{% url 'tasks:position-create' %}" class="btn btn-primary btn-sm mb-3">{% translate "Create New Position" %}</a>
       </div>
       <div class="row">
 
@@ -24,8 +24,8 @@
               <div class="card-body text-center">
                 <h5 class="card-title">{{ position.name }}</h5>
                 <div class="mt-3">
-                  <a href="{% url "tasks:position-update" pk=position.id %}" class="btn btn-warning btn-sm me-2">{% translate "Edit" %}</a>
-                  <a href="{% url "tasks:position-delete" pk=position.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+                  <a href="{% url 'tasks:position-update' pk=position.id %}" class="btn btn-warning btn-sm me-2">{% translate "Edit" %}</a>
+                  <a href="{% url 'tasks:position-delete' pk=position.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
                 </div>
               </div>
             </div>

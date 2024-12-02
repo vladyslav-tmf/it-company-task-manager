@@ -45,9 +45,9 @@
             </div>
 
             <div class="card-footer text-center">
-              <a href="{% url "accounts:worker-update" pk=worker.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
-              <a href="{% url "accounts:worker-delete" pk=worker.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
-              <a href="{% url "accounts:worker-list" %}" class="btn btn-secondary btn-sm">{% translate "Back to List" %}</a>
+              <a href="{% url 'accounts:worker-update' pk=worker.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
+              <a href="{% url 'accounts:worker-delete' pk=worker.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+              <a href="{% url 'accounts:worker-list' %}" class="btn btn-secondary btn-sm">{% translate "Back to List" %}</a>
             </div>
           </div>
         </div>

@@ -49,8 +49,8 @@
                 </td>
                 <td>
                   <a href="{{ task.get_absolute_url }}" class="btn btn-info btn-sm">{% translate "Details" %}</a>
-                  <a href="{% url "tasks:task-update" pk=task.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
-                  <a href="{% url "tasks:task-delete" pk=task.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+                  <a href='{% url "tasks:task-update" pk=task.id %}' class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
+                  <a href='{% url "tasks:task-delete" pk=task.id %}' class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
                 </td>
               </tr>
             {% endfor %}
