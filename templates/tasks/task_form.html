@@ -1,14 +1,25 @@
 {% extends "layouts/base.html" %}
+{% load i18n %}
 {% load crispy_forms_filters %}
 
 {% block title %}
-  {{ object|yesno:"Edit,Create" }} Task
+  {% if object %}
+    {% translate "Edit Task" %}
+  {% else %}
+    {% translate "Create Task" %}
+  {% endif %}
 {% endblock title %}
 
 {% block content %}
   <section class="pt-3 pb-4">
     <div class="container">
-      <h2 class="text-center">{{ object|yesno:"Edit,Create" }} Task</h2>
+      <h2 class="text-center">
+        {% if object %}
+          {% translate "Edit Task" %}
+        {% else %}
+          {% translate "Create Task" %}
+        {% endif %}
+      </h2>
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="card">
@@ -21,7 +32,11 @@
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block">
-                    {{ object|yesno:"Update Task,Create Task" }}
+                    {% if object %}
+                      {% translate "Update Task" %}
+                    {% else %}
+                      {% translate "Create Task" %}
+                    {% endif %}
                   </button>
                 </div>
               </form>

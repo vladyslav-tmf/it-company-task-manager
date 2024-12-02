@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import QuerySet
 from django.urls import reverse_lazy
+from django.utils.translation import gettext as _
 from django.views import generic
 from django.views.generic import TemplateView
 
@@ -67,16 +68,42 @@ class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     queryset = Task.objects.select_related("task_type").prefetch_related("assignees")
 
 
-class TaskCreateView(LoginRequiredMixin, generic.CreateView):
+class TaskFormMixin:
+    def _customize_form(self, form: TaskForm) -> None:
+        self._customize_field(form, "name", _("Name"))
+        self._customize_field(form, "task_type", _("Task type"))
+        self._customize_field(form, "is_completed", _("Is completed"))
+        self._customize_field(form, "description", _("Description"))
+        self._customize_field(form, "deadline", _("Deadline"))
+        self._customize_field(form, "priority", _("Priority"))
+        self._customize_field(form, "assignees", _("Assignees"))
+
+    @staticmethod
+    def _customize_field(form: TaskForm, field_name: str, label: str) -> None:
+        field = form.fields[field_name]
+        field.label = label
+
+
+class TaskCreateView(LoginRequiredMixin, TaskFormMixin, generic.CreateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy("tasks:task-list")
 
+    def get_form(self, form_class=TaskForm) -> TaskForm:
+        form = super().get_form(form_class)
+        self._customize_form(form)
+        return form
 
-class TaskUpdateView(LoginRequiredMixin, generic.UpdateView):
+
+class TaskUpdateView(LoginRequiredMixin, TaskFormMixin, generic.UpdateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy("tasks:task-list")
+
+    def get_form(self, form_class=TaskForm) -> TaskForm:
+        form = super().get_form(form_class)
+        self._customize_form(form)
+        return form
 
 
 class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):

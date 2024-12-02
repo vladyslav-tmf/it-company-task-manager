@@ -1,8 +1,9 @@
 {% extends "layouts/base.html" %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}
-  Home Page
+  {% translate "Home Page" %}
 {% endblock title %}
 
 {% block content %}
@@ -16,8 +17,10 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state1" countTo="{{ total_tasks }}">0</span></h1>
-                <h5 class="m5-3">Task{{ total_workers|pluralize }}</h5>
-                <p class="text-sm">Number of tasks in the system</p>
+                <h5 class="m5-3"><a href="{% url "tasks:task-list" %}">
+                  {% blocktrans count total_tasks=total_tasks %}Task{% plural %}Tasks{% endblocktrans %}
+                </a></h5>
+                <p class="text-sm">{% translate "Number of tasks in the system" %}</p>
 
               </div>
               <hr class="vertical dark">
@@ -26,8 +29,11 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state2" countTo="{{ total_workers }}">0</span></h1>
-                <h5 class="m5-3">Worker{{ total_workers|pluralize }}</h5>
-                <p class="text-sm">Number of workers in the system</p>
+                <h5 class="m5-3"><a href="{% url "accounts:worker-list" %}">
+                  {% blocktrans count total_workers=total_workers %}Worker{% plural %}Workers{% endblocktrans %}
+                </a>
+                </h5>
+                <p class="text-sm">{% translate "Number of workers in the system" %}</p>
 
               </div>
               <hr class="vertical dark">
@@ -36,8 +42,11 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state3" countTo="{{ total_positions }}">0</span></h1>
-                <h5 class="m5-3">Position{{ total_positions|pluralize }}</h5>
-                <p class="text-sm">Number of positions in the system</p>
+                <h5 class="m5-3"><a href="{% url "tasks:position-list" %}">
+                  {% blocktrans count total_positions=total_positions %}Position{% plural %}Positions{% endblocktrans %}
+                </a>
+                </h5>
+                <p class="text-sm">{% translate "Number of positions in the system" %}</p>
 
               </div>
               <hr class="vertical dark">
@@ -46,8 +55,10 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state4" countTo="{{ total_task_types }}">0</span></h1>
-                <h5 class="m5-3">Task Type{{ total_task_types|pluralize }}</h5>
-                <p class="text-sm">Number of task types in the system</p>
+                <h5 class="m5-3"><a href="{% url "tasks:task-type-list" %}">
+                  {% blocktrans count total_task_types=total_task_types %}Task Type{% plural %}Task Types{% endblocktrans %}
+                </a></h5>
+                <p class="text-sm">{% translate "Number of task types in the system" %}</p>
 
               </div>
               <hr class="vertical dark">
@@ -56,8 +67,10 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state5" countTo="{{ user_tasks }}">0</span></h1>
-                <h5 class="m5-3">Pending task{{ user_tasks|pluralize }}</h5>
-                <p class="text-sm">Number of pending tasks assigned to you</p>
+                <h5 class="m5-3"><a href="{% url "accounts:worker-detail" pk=user.id %}">
+                  {% blocktrans count user_tasks=user_tasks %}Pending task{% plural %}Pending tasks{% endblocktrans %}
+                </a></h5>
+                <p class="text-sm">{% translate "Number of pending tasks assigned to you" %}</p>
 
               </div>
               <hr class="vertical dark">
@@ -66,8 +79,10 @@
               <div class="p-3 text-center">
 
                 <h1 class="text-gradient text-primary"><span id="state6" countTo="{{ total_visits }}">0</span></h1>
-                <h5 class="m5-3">Visit{{ total_visits|pluralize }}</h5>
-                <p class="text-sm">Number of your visits to this page</p>
+                <h5 class="m5-3">
+                  {% blocktrans count total_visits=total_visits %}Visit{% plural %}Visits{% endblocktrans %}
+                </h5>
+                <p class="text-sm">{% translate "Number of your visits to this page" %}</p>
 
               </div>
             </div>

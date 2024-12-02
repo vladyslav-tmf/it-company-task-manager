@@ -1,7 +1,8 @@
 {% extends "layouts/base.html" %}
+{% load i18n %}
 
 {% block title %}
-  Position List
+  {% translate "Position List" %}
 {% endblock title %}
 
 {% block content %}
@@ -10,10 +11,10 @@
     {% include "includes/search_form.html" %}
 
     <div class="container">
-      <h2 class="text-center">Position List</h2>
+      <h2 class="text-center">{% translate "Position List" %}</h2>
 
       <div class="d-flex justify-content-center mb-3">
-        <a href="{% url "tasks:position-create" %}" class="btn btn-primary btn-sm mb-3">Create New Position</a>
+        <a href="{% url "tasks:position-create" %}" class="btn btn-primary btn-sm mb-3">{% translate "Create New Position" %}</a>
       </div>
       <div class="row">
 
@@ -23,8 +24,8 @@
               <div class="card-body text-center">
                 <h5 class="card-title">{{ position.name }}</h5>
                 <div class="mt-3">
-                  <a href="{% url "tasks:position-update" pk=position.id %}" class="btn btn-warning btn-sm me-2">Edit</a>
-                  <a href="{% url "tasks:position-delete" pk=position.id %}" class="btn btn-danger btn-sm">Delete</a>
+                  <a href="{% url "tasks:position-update" pk=position.id %}" class="btn btn-warning btn-sm me-2">{% translate "Edit" %}</a>
+                  <a href="{% url "tasks:position-delete" pk=position.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
                 </div>
               </div>
             </div>
@@ -32,7 +33,7 @@
 
         {% empty %}
           <div class="alert alert-danger text-white text-center mt-4" role="alert">
-            No positions found. Click "CREATE NEW POSITION" to add one!
+            {% translate 'No positions found. Click "CREATE NEW POSITION" to add one' %}!
           </div>
         {% endfor %}
       </div>

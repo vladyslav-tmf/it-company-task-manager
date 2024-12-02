@@ -1,13 +1,14 @@
 {% extends "layouts/base.html" %}
+{% load i18n %}
 
 {% block title %}
-  Worker Detail
+  {% translate "Worker Detail" %}
 {% endblock title %}
 
 {% block content %}
   <section class="pt-3 pb-4">
     <div class="container">
-      <h2 class="text-center">Worker Detail</h2>
+      <h2 class="text-center">{% translate "Worker Detail" %}</h2>
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="card">
@@ -16,11 +17,11 @@
             </div>
 
             <div class="card-body">
-              <p><strong>First name:</strong> {{ worker.first_name }}</p>
-              <p><strong>Last name:</strong> {{ worker.last_name }}</p>
-              <p><strong>Email:</strong> {{ worker.email }}</p>
-              <p><strong>Position:</strong> {{ worker.position }}</p>
-              <p><strong>Assigned to (Completed Tasks):</strong></p>
+              <p><strong>{% translate "First name" %}:</strong> {{ worker.first_name }}</p>
+              <p><strong>{% translate "Last name" %}:</strong> {{ worker.last_name }}</p>
+              <p><strong>{% translate "Email" %}:</strong> {{ worker.email }}</p>
+              <p><strong>{% translate "Position" %}:</strong> {{ worker.position }}</p>
+              <p><strong>{% translate "Assigned to (Completed Tasks)" %}:</strong></p>
 
               {% if completed_tasks %}
                 {% for task in completed_tasks %}
@@ -31,7 +32,7 @@
                 <p>No completed tasks.</p>
               {% endif %}
 
-              <p><strong>Assigned to (Pending Tasks):</strong></p>
+              <p><strong>{% translate "Assigned to (Pending Tasks)" %}:</strong></p>
 
               {% if pending_tasks %}
                 {% for task in pending_tasks %}
@@ -39,14 +40,14 @@
                 {% endfor %}
 
               {% else %}
-                <p>No pending tasks.</p>
+                <p>{% translate "No pending tasks" %}.</p>
               {% endif %}
             </div>
 
             <div class="card-footer text-center">
-              <a href="{% url "accounts:worker-update" pk=worker.id %}" class="btn btn-warning btn-sm">Edit</a>
-              <a href="{% url "accounts:worker-delete" pk=worker.id %}" class="btn btn-danger btn-sm">Delete</a>
-              <a href="{% url "accounts:worker-list" %}" class="btn btn-secondary btn-sm">Back to List</a>
+              <a href="{% url "accounts:worker-update" pk=worker.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
+              <a href="{% url "accounts:worker-delete" pk=worker.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+              <a href="{% url "accounts:worker-list" %}" class="btn btn-secondary btn-sm">{% translate "Back to List" %}</a>
             </div>
           </div>
         </div>

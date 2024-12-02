@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 from tasks.models import Position, Task, TaskType
 
@@ -22,17 +23,19 @@ class TaskForm(forms.ModelForm):
             "description",
             "deadline",
             "priority",
-            "assignees"
+            "assignees",
         ]
 
 
 class TaskTypeForm(forms.ModelForm):
+    name = forms.CharField(label=_("Name"))
     class Meta:
         model = TaskType
         fields = ["name"]
 
 
 class PositionForm(forms.ModelForm):
+    name = forms.CharField(label=_("Name"))
     class Meta:
         model = Position
         fields = ["name"]
@@ -43,7 +46,7 @@ class TaskSearchForm(forms.Form):
         max_length=MAX_LENGTH,
         label="",
         required=False,
-        widget=forms.TextInput(attrs={"placeholder": "Search by task name"})
+        widget=forms.TextInput(attrs={"placeholder": _("Search by task name")}),
     )
 
 
@@ -52,7 +55,7 @@ class TaskTypeSearchForm(forms.Form):
         max_length=MAX_LENGTH,
         label="",
         required=False,
-        widget=forms.TextInput(attrs={"placeholder": "Search by task type name"})
+        widget=forms.TextInput(attrs={"placeholder": _("Search by task type name")}),
     )
 
 
@@ -61,5 +64,5 @@ class PositionSearchForm(forms.Form):
         max_length=MAX_LENGTH,
         label="",
         required=False,
-        widget=forms.TextInput(attrs={"placeholder": "Search by position name"})
+        widget=forms.TextInput(attrs={"placeholder": _("Search by position name")}),
     )

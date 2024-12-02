@@ -1,14 +1,15 @@
 {% extends "layouts/base.html" %}
+{% load i18n %}
 {% load crispy_forms_filters %}
 
 {% block title %}
-  Edit Worker
+  {% translate "Edit Worker" %}
 {% endblock title %}
 
 {% block content %}
   <section class="pt-3 pb-4">
     <div class="container">
-      <h2 class="text-center">{{ object|yesno:"Edit,Register" }} Worker</h2>
+      <h2 class="text-center">{% translate "Edit Worker" %}</h2>
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="card">
@@ -21,7 +22,7 @@
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block">
-                    Update Worker
+                    {% translate "Update Worker" %}
                   </button>
                 </div>
               </form>

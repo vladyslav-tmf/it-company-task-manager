@@ -1,8 +1,9 @@
 {% extends "layouts/base-registration.html" %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}
-  Delete Worker
+  {% translate "Delete Worker" %}
 {% endblock title %}
 
 {% block content %}
@@ -13,28 +14,28 @@
           <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
             <div class="card card-plain">
               <div class="card-header pb-0 text-left">
-                <h4 class="font-weight-bolder text-danger">Confirm Deletion</h4>
+                <h4 class="font-weight-bolder text-danger">{% translate "Confirm Deletion" %}</h4>
                 <p class="mb-0">
-                  Are you sure you want to delete the worker:
+                  {% translate "Are you sure you want to delete the worker" %}:
                 </p>
                 <p class="mb-0"><strong>
                   {{ worker.username }}</strong>?
                 </p>
                 <p class="mb-0">
-                  This action cannot be undone.
+                  {% translate "This action cannot be undone" %}.
                 </p>
               </div>
               <div class="card-body">
 
                 {% if worker == user %}
-                  <p class="text-danger">You cannot delete yourself.</p>
+                  <p class="text-danger">{% translate "You cannot delete yourself" %}.</p>
 
                 {% else %}
                   <form method="post" action="" role="form">
                     {% csrf_token %}
                     <div class="text-center">
                       <button type="submit"
-                              class="btn btn-lg bg-gradient-danger btn-lg w-100 mt-4 mb-2">Confirm
+                              class="btn btn-lg bg-gradient-danger btn-lg w-100 mt-4 mb-2">{% translate "Confirm" %}
                       </button>
                     </div>
                   </form>
@@ -43,8 +44,8 @@
               </div>
               <div class="card-footer text-center pt-0 px-lg-2 px-1">
                 <p class="mb-4 text-sm mx-auto">
-                  Changed your mind?
-                  <a href="{% url "accounts:worker-list" %}" class="text-primary text-gradient font-weight-bold">Go Back</a>
+                  {% translate "Changed your mind?" %}
+                  <a href="{% url "accounts:worker-list" %}" class="text-primary text-gradient font-weight-bold">{% translate "Go Back" %}</a>
                 </p>
               </div>
             </div>

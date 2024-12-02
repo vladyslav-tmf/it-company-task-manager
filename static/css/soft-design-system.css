@@ -14107,4 +14107,8 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
+.language-select {
+  width: 150px; /* Задайте бажану ширину */
+}
+
 /*# sourceMappingURL=soft-design-system.css.map */
