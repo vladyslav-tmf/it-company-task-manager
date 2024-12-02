@@ -87,3 +87,14 @@ To run the automated tests:
 ```shell
 python manage.py test
 ```
+
+## Additional Resources
+
+The front-end of this project utilizes a Bootstrap template.
+
+- **Template Name**: Soft UI Design System
+- **Author**: © Creative Tim - Coded by AppSeed
+- **Source**: [Link to Official Website](https://app-generator.dev/product/soft-ui-dashboard/django/)
+- **License**: [View License](https://www.creative-tim.com/license)
+
+This template provides the base styling and layout, customized to fit the needs of this project.
