@@ -1,15 +1,15 @@
 # IT Company Task Manager
 
-A **Django-based project** designed to simplify task management processes in IT companies.
+A **Django-powered web application** designed to simplify task management processes in IT companies.
 
 ## Features
 
-* **Task Management:** Create, edit, delete, and prioritize tasks directly from the website interface.
-* **Status Monitoring:** Keep track of task statuses (e.g., **_Pending_**, **_Completed_**).
-* **User Authentication:** Login and registration functionality for Workers.
-* **Admin Panel:** Powerful admin panel for advanced managing.
-* **Email Confirmation:** Send a confirmation link to the user's email for account activation.
-* **Localization Support:** Switch the language of the website interface.
+* **Task Management:** Create, edit, delete, and prioritize tasks through an intuitive web interface
+* **Status Tracking:** Monitor task statuses (e.g., **_Pending_**, **_Completed_**)
+* **Authentication:** Comprehensive login and registration system for workers
+* **Admin Panel:** Powerful administrative interface for advanced management
+* **Email Verification:** Secure account activation via email confirmation
+* **Localization Support:** Multi-language interface with Ukrainian and English support
 
 ## System Requirements
 
@@ -18,12 +18,12 @@ A **Django-based project** designed to simplify task management processes in IT 
 
 ## Environment Variables
 
-The project requires certain environment variables to function properly. These should be defined in a `.env` file located in the root directory of the project. Below is a list of the key environment variables:
+The project requires the following environment variables in a `.env` file in the root directory:
 
-- `EMAIL_HOST_USER`: The email address used for sending emails.
-- `EMAIL_HOST_PASSWORD`: The password for the specified email address.
+- `EMAIL_HOST_USER`: Email address for sending notifications
+- `EMAIL_HOST_PASSWORD`: Password for the email account
 
-Create a `.env` file as shown in the `.env.sample` and replace `<email>` and `<password>` with your actual values.
+Create a `.env` file following the `.env.sample` template and replace with your values.
 
 ```dotenv
 EMAIL_HOST_USER=your_email@gmail.com
@@ -41,45 +41,51 @@ Follow these steps to set up and run the project locally:
     git clone https://github.com/vladyslav-tmf/it-company-task-manager.git
     cd it-company-task-manager
     ```
+
 2. Create and activate a virtual environment:
-    - For Linux/Mac:
+    - Linux/Mac:
       ```shell
       python3 -m venv venv
       source venv/bin/activate
       ```
-    - For Windows:
+    - Windows:
       ```shell
       python -m venv venv
       venv\Scripts\activate
       ```
+
 3. Install dependencies:
     ```shell
     pip install -r requirements.txt
     ```
-4. Apply migrations to set up the database:
+
+4. Apply database migrations:
     ```shell
     python manage.py migrate
     ```
-5. Load example data (optional):
+
+5. Load sample data (optional):
     ```shell
     python manage.py loaddata dataset.json
     ```
-6. Compile translation files (if using localization):
+
+6. Compile translation files:
     ```shell
     python manage.py compilemessages -i "venv*"
     ```
-    This command compiles `.po` files into `.mo` files, ignoring directory `venv`.
+
 7. Start the development server:
     ```shell
     python manage.py runserver
     ```
-8. Open your browser and visit: [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+8. Access the application at: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ## Demo
 
-Here’s a preview of the website interface:
+Preview of the application interface:
 
-![Website Interface](demo.png)
+![Application Interface](demo.png)
 
 ## Testing
 
