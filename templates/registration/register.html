@@ -33,41 +33,17 @@
 
                   {% csrf_token %}
 
-                  <div class="mb-3">
-                    {{ form.username }}
-                  </div>
-                  <span class="text-error">{{ form.username.errors }}</span>
-
-                  <div class="mb-3">
-                    {{ form.email }}
-                  </div>
-                  <span class="text-error">{{ form.email.errors }}</span>
-
-                  <div class="mb-3">
-                    {{ form.first_name }}
-                  </div>
-                  <span class="text-error">{{ form.first_name.errors }}</span>
-
-                  <div class="mb-3">
-                    {{ form.last_name }}
-                  </div>
-                  <span class="text-error">{{ form.last_name.errors }}</span>
-
-                  <div class="mb-3">
-                    <small>{{ form.position.help_text }}</small>
-                    {% render_field form.position class="form-control" %}
-                  </div>
-                  <span class="text-error">{{ form.position.errors }}</span>
-
-                  <div class="mb-3">
-                    {{ form.password1 }}
-                  </div>
-                  <span class="text-error">{{ form.password1.errors }}</span>
-
-                  <div class="mb-3">
-                    {{ form.password2 }}
-                  </div>
-                  <span class="text-error">{{ form.password2.errors }}</span>
+                  {% for field in form %}
+                    <div class="mb-3">
+                      {% if field.name == 'position' %}
+                        <small>{{ field.help_text }}</small>
+                        {% render_field field class="form-control" %}
+                      {% else %}
+                        {{ field }}
+                      {% endif %}
+                    </div>
+                    <span class="text-error">{{ field.errors }}</span>
+                  {% endfor %}
 
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="rememberMe">

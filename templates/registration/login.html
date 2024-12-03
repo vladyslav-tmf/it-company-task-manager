@@ -32,8 +32,7 @@
                         {{ message }}
                       {% endfor %}
                     {% else %}
-                      {% if form.errors %}
-                      {% else %}
+                      {% if not form.errors %}
                         {% translate "Add your credentials" %}
                       {% endif %}
                     {% endif %}
