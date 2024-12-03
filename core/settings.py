@@ -38,7 +38,7 @@ INTERNAL_IPS = ["localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
-    # build-in apps:
+    # Build-in apps:
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,13 +46,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # third-party apps:
+    # Third-party apps:
     "crispy_bootstrap4",
     "crispy_forms",
     "debug_toolbar",
     "widget_tweaks",
 
-    # user apps:
+    # User apps:
     "accounts",
     "tasks",
 ]
@@ -160,6 +160,7 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Email settings
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = os.environ["EMAIL_HOST_USER"]
