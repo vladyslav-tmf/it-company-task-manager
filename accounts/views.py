@@ -11,7 +11,6 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.translation import gettext as _
 from django.views import View, generic
-from django.views.generic import FormView
 
 from accounts.forms import (
     WorkerRegisterForm,
@@ -25,7 +24,7 @@ from tasks.models import Task
 User = get_user_model()
 
 
-class WorkerRegisterView(FormView):
+class WorkerRegisterView(generic.FormView):
     form_class = WorkerRegisterForm
     template_name = "registration/register.html"
 
@@ -104,7 +103,7 @@ class WorkerActivateView(View):
         return redirect("accounts:register")
 
 
-class WorkerLoginView(FormView):
+class WorkerLoginView(generic.FormView):
     form_class = AuthenticationForm
     template_name = "registration/login.html"
     success_url = reverse_lazy("tasks:index")
