@@ -216,7 +216,9 @@ msgstr "Деталі працівника"
 msgid "Position"
 msgid_plural "Positions"
 msgstr[0] "Посада"
-msgstr[1] "Посад"
+msgstr[1] "Посади"
+msgstr[2] "Посад"
+msgstr[3] "Посад"
 
 #: .\templates\accounts\worker_detail.html:24
 msgid "Assigned to (Completed Tasks)"
@@ -393,7 +395,9 @@ msgstr "Маєте обліковий запис"
 msgid "Task"
 msgid_plural "Tasks"
 msgstr[0] "Задача"
-msgstr[1] "Задач"
+msgstr[1] "Задачі" 
+msgstr[2] "Задач"
+msgstr[3] "Задач"
 
 #: .\templates\tasks\index.html:23
 msgid "Number of tasks in the system"
@@ -403,7 +407,9 @@ msgstr "Кількість задач у системі"
 msgid "Worker"
 msgid_plural "Workers"
 msgstr[0] "Працівник"
-msgstr[1] "Працівників"
+msgstr[1] "Працівники"
+msgstr[2] "Працівників"
+msgstr[3] "Працівників"
 
 #: .\templates\tasks\index.html:36
 msgid "Number of workers in the system"
@@ -416,8 +422,10 @@ msgstr "Кількість посад у системі"
 #: .\templates\tasks\index.html:59 .\templates\tasks\task_detail.html:22
 msgid "Task Type"
 msgid_plural "Task Types"
-msgstr[0] "Тип задач"
-msgstr[1] "Типів задач"
+msgstr[0] "Тип задачі"
+msgstr[1] "Типи задач"
+msgstr[2] "Типів задач"
+msgstr[3] "Типів задач"
 
 #: .\templates\tasks\index.html:61
 msgid "Number of task types in the system"
@@ -427,7 +435,9 @@ msgstr "Кількість типів задач у системі"
 msgid "Pending task"
 msgid_plural "Pending tasks"
 msgstr[0] "Невиконана задача"
-msgstr[1] "Невиконаних задач"
+msgstr[1] "Невиконані задачі"
+msgstr[2] "Невиконаних задач"
+msgstr[3] "Невиконаних задач"
 
 #: .\templates\tasks\index.html:73
 msgid "Number of pending tasks assigned to you"
@@ -437,7 +447,9 @@ msgstr "Кількість невиконаних задач, призначен
 msgid "Visit"
 msgid_plural "Visits"
 msgstr[0] "Візит"
-msgstr[1] "Візитів"
+msgstr[1] "Візити"
+msgstr[2] "Візитів"
+msgstr[3] "Візитів"
 
 #: .\templates\tasks\index.html:85
 msgid "Number of your visits to this page"
