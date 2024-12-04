@@ -2,6 +2,14 @@
 
 A **Django-powered web application** designed to simplify task management processes in IT companies.
 
+## Live Demo
+
+The application is deployed and available at: [https://it-company-task-manager-fdy0.onrender.com](https://it-company-task-manager-fdy0.onrender.com)
+
+You can test the application using these demo credentials:
+- **Login:** admin
+- **Password:** 1111
+
 ## Features
 
 * **Task Management:** Create, edit, delete, and prioritize tasks through an intuitive web interface
@@ -18,19 +26,9 @@ A **Django-powered web application** designed to simplify task management proces
 
 ## Environment Variables
 
-The project requires the following environment variables in a `.env` file in the root directory:
-
-- `EMAIL_HOST_USER`: Email address for sending notifications
-- `EMAIL_HOST_PASSWORD`: Password for the email account
-
-Create a `.env` file following the `.env.sample` template and replace with your values.
-
-```dotenv
-EMAIL_HOST_USER=your_email@gmail.com
-EMAIL_HOST_PASSWORD=your_password
-```
-
-Ensure that the `.env` file is not included in your version control system (e.g., Git) as it contains sensitive information.
+The project requires the following environment variables in a `.env` file in the root directory.
+* Create a `.env` file following the `.env.sample` template and replace with your values.
+* Ensure that the `.env` file is not included in your version control system (e.g., Git) as it contains sensitive information.
 
 ## Getting started
 
