@@ -1,0 +1,740 @@
+[
+{
+    "model": "tasks.tasktype",
+    "pk": 2,
+    "fields": {
+        "name": "Bug Fixing"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 3,
+    "fields": {
+        "name": "Code Review"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 4,
+    "fields": {
+        "name": "Design Mockup"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 5,
+    "fields": {
+        "name": "Database Optimization"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 6,
+    "fields": {
+        "name": "Performance Testing"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 7,
+    "fields": {
+        "name": "Feature Development"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 8,
+    "fields": {
+        "name": "Documentation Writing"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 9,
+    "fields": {
+        "name": "Client Meeting"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 10,
+    "fields": {
+        "name": "Quality Assurance"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 11,
+    "fields": {
+        "name": "System Deployment"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 12,
+    "fields": {
+        "name": "Market Research"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 13,
+    "fields": {
+        "name": "User Training"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 14,
+    "fields": {
+        "name": "Maintenance Update"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 15,
+    "fields": {
+        "name": "Security Audit"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 16,
+    "fields": {
+        "name": "Prototype Creation"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 17,
+    "fields": {
+        "name": "Integration Testing"
+    }
+},
+{
+    "model": "tasks.tasktype",
+    "pk": 18,
+    "fields": {
+        "name": "Requirements Analysis"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 1,
+    "fields": {
+        "name": "Backend Developer"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 2,
+    "fields": {
+        "name": "Software Engineer"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 3,
+    "fields": {
+        "name": "Data Scientist"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 4,
+    "fields": {
+        "name": "Product Manager"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 5,
+    "fields": {
+        "name": "Marketing Specialist"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 6,
+    "fields": {
+        "name": "Sales Representative"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 7,
+    "fields": {
+        "name": "UI/UX Designer"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 8,
+    "fields": {
+        "name": "DevOps Engineer"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 9,
+    "fields": {
+        "name": "Customer Support Specialist"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 10,
+    "fields": {
+        "name": "Financial Analyst"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 11,
+    "fields": {
+        "name": "HR Manager"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 12,
+    "fields": {
+        "name": "Content Strategist"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 13,
+    "fields": {
+        "name": "Operations Coordinator"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 14,
+    "fields": {
+        "name": "Mobile App Developer"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 15,
+    "fields": {
+        "name": "Business Analyst"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 16,
+    "fields": {
+        "name": "SEO Specialist"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 17,
+    "fields": {
+        "name": "Project Coordinator"
+    }
+},
+{
+    "model": "tasks.position",
+    "pk": 18,
+    "fields": {
+        "name": "Cybersecurity Specialist"
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$Wsyzm62Y1soTjrPcWaW1PL$cDl3i3pR+86m6zk5AP0X6VHSvO+F5ECq60EwKCvXRdY=",
+        "last_login": "2024-11-19T01:05:23.766Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "AdminFirstName",
+        "last_name": "AdminLastName",
+        "email": "admin@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-11-17T13:13:03Z",
+        "position": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 3,
+    "fields": {
+        "password": "!KE044B5e0J5o38U7oZiYsYw6LI8x1bwDOjsekCty",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "john_doe",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:12:10.000Z",
+        "position": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 4,
+    "fields": {
+        "password": "!AebWwRdlkkKErFgDyadixJ5xJY2ySuyO1DRgeHqS",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "susan_lee",
+        "first_name": "Susan",
+        "last_name": "Lee",
+        "email": "susan.lee@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:12:36.514Z",
+        "position": 4,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 5,
+    "fields": {
+        "password": "!xTsBF6PxFcZaNXPgioUbYsX2s5DT2i9I7R67ARIo",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "michael_brown",
+        "first_name": "Michael",
+        "last_name": "Brown",
+        "email": "michael.brown@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:12:58.662Z",
+        "position": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 6,
+    "fields": {
+        "password": "!xgDWcplCZjEkJLVKnFv5d8M6MgwmfT4RO68XQ5N1",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emily_clark",
+        "first_name": "Emily",
+        "last_name": "Clark",
+        "email": "emily.clark@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:13:27.240Z",
+        "position": 5,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 7,
+    "fields": {
+        "password": "!ueHwpF5fgxcrGk77yPQio7PfScLh6cND1RLzdOi9",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "james_wilson",
+        "first_name": "James",
+        "last_name": "Wilson",
+        "email": "james.wilson@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:13:43.664Z",
+        "position": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 8,
+    "fields": {
+        "password": "!bUuFXHnxFRoZs6VvYJgOpFNtxMi6iAO6VVnoeQN2",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "linda_martin",
+        "first_name": "Linda",
+        "last_name": "Martin",
+        "email": "linda.martin@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:14:02.721Z",
+        "position": 7,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 9,
+    "fields": {
+        "password": "!LnfVm7MlRWR7aNXWG9YdEoIJoRTfnaBuUsLAI9vl",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "robert_taylor",
+        "first_name": "Robert",
+        "last_name": "Taylor",
+        "email": "robert.taylor@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:14:21.180Z",
+        "position": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 10,
+    "fields": {
+        "password": "!M5YsTy81qaliTVzrFZ8EjQce0clIxeCDjXQtR7Pv",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jessica_white",
+        "first_name": "Jessica",
+        "last_name": "White",
+        "email": "jessica.white@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:14:37.569Z",
+        "position": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.worker",
+    "pk": 11,
+    "fields": {
+        "password": "!Hf0d0kJVcdL3hfG8FfPic9vhGd0GS8IgU3QnMGV0",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "david_harris",
+        "first_name": "David",
+        "last_name": "Harris",
+        "email": "david.harris@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-19T01:14:51Z",
+        "position": 18,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 2,
+    "fields": {
+        "name": "Fix Login Issue",
+        "description": "Resolve the issue preventing users from logging in.",
+        "deadline": "2024-11-22",
+        "is_completed": false,
+        "priority": "High",
+        "task_type": 2,
+        "assignees": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 3,
+    "fields": {
+        "name": "Design Homepage Mockup",
+        "description": "Create a new design for the website homepage.",
+        "deadline": "2024-11-25",
+        "is_completed": false,
+        "priority": "Standard",
+        "task_type": 4,
+        "assignees": [
+            6
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 4,
+    "fields": {
+        "name": "Conduct User Research",
+        "description": "Perform user research to gather insights for new feature.",
+        "deadline": "2024-11-30",
+        "is_completed": false,
+        "priority": "Low",
+        "task_type": 12,
+        "assignees": [
+            8
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 5,
+    "fields": {
+        "name": "Optimize Database Queries",
+        "description": "Improve the performance of SQL queries to reduce load times.",
+        "deadline": "2024-11-23",
+        "is_completed": true,
+        "priority": "High",
+        "task_type": 5,
+        "assignees": [
+            5
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 6,
+    "fields": {
+        "name": "Prepare for Client Meeting",
+        "description": "Create an agenda and presentation for the upcoming client meeting.",
+        "deadline": "2024-11-21",
+        "is_completed": true,
+        "priority": "Standard",
+        "task_type": 9,
+        "assignees": [
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 7,
+    "fields": {
+        "name": "Write User Documentation",
+        "description": "Write user documentation for the new software features.",
+        "deadline": "2024-11-28",
+        "is_completed": false,
+        "priority": "Standard",
+        "task_type": 8,
+        "assignees": [
+            10
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 8,
+    "fields": {
+        "name": "Test New Features",
+        "description": "Test the new features in the latest build.",
+        "deadline": "2024-11-27",
+        "is_completed": false,
+        "priority": "High",
+        "task_type": 10,
+        "assignees": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 9,
+    "fields": {
+        "name": "Update Security Protocols",
+        "description": "Implement the latest security updates and protocols for the system.",
+        "deadline": "2024-11-24",
+        "is_completed": true,
+        "priority": "High",
+        "task_type": 15,
+        "assignees": [
+            11
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 10,
+    "fields": {
+        "name": "Build API for New Feature",
+        "description": "Develop the API necessary for the new user feature.",
+        "deadline": "2024-12-01",
+        "is_completed": false,
+        "priority": "High",
+        "task_type": 7,
+        "assignees": [
+            5
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 11,
+    "fields": {
+        "name": "Prepare Marketing Strategy",
+        "description": "Create a marketing strategy for the product launch.",
+        "deadline": "2024-11-29",
+        "is_completed": false,
+        "priority": "Standard",
+        "task_type": 12,
+        "assignees": [
+            6
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 12,
+    "fields": {
+        "name": "Fix Mobile App Crash",
+        "description": "Resolve the issue causing the mobile app to crash on startup.",
+        "deadline": "2024-11-22",
+        "is_completed": false,
+        "priority": "High",
+        "task_type": 2,
+        "assignees": [
+            3
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 13,
+    "fields": {
+        "name": "Create New Feature Documentation",
+        "description": "Document the new features and API endpoints for the development team.",
+        "deadline": "2024-11-28",
+        "is_completed": false,
+        "priority": "Standard",
+        "task_type": 8,
+        "assignees": [
+            10
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 14,
+    "fields": {
+        "name": "Test Performance on Load",
+        "description": "Conduct performance testing on the server with high traffic.",
+        "deadline": "2024-11-26",
+        "is_completed": true,
+        "priority": "Standard",
+        "task_type": 6,
+        "assignees": [
+            9
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 15,
+    "fields": {
+        "name": "Set Up Server for Production",
+        "description": "Prepare the production server for deployment of new features.",
+        "deadline": "2024-11-30",
+        "is_completed": false,
+        "priority": "High",
+        "task_type": 11,
+        "assignees": [
+            8
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 16,
+    "fields": {
+        "name": "Review New Pull Requests",
+        "description": "Review and approve new pull requests from the development team.",
+        "deadline": "2024-11-21",
+        "is_completed": true,
+        "priority": "Standard",
+        "task_type": 3,
+        "assignees": [
+            4
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 17,
+    "fields": {
+        "name": "Create Test Cases for New Feature",
+        "description": "Write test cases for the new user authentication feature.",
+        "deadline": "2024-11-25",
+        "is_completed": false,
+        "priority": "Standard",
+        "task_type": 17,
+        "assignees": [
+            7
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 18,
+    "fields": {
+        "name": "Plan Next Sprint",
+        "description": "Organize tasks and milestones for the upcoming sprint.",
+        "deadline": "2024-11-24",
+        "is_completed": false,
+        "priority": "Low",
+        "task_type": 12,
+        "assignees": [
+            6
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 19,
+    "fields": {
+        "name": "Create Database Backup",
+        "description": "Create a full backup of the database before deployment.",
+        "deadline": "2024-11-23",
+        "is_completed": true,
+        "priority": "Standard",
+        "task_type": 14,
+        "assignees": [
+            5
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 20,
+    "fields": {
+        "name": "Audit Security Logs",
+        "description": "Review the security logs to detect any unauthorized access.",
+        "deadline": "2024-11-29",
+        "is_completed": false,
+        "priority": "High",
+        "task_type": 15,
+        "assignees": [
+            11
+        ]
+    }
+},
+{
+    "model": "tasks.task",
+    "pk": 21,
+    "fields": {
+        "name": "Prototype New Feature",
+        "description": "Create a prototype for the new feature as per client request.",
+        "deadline": "2024-12-05",
+        "is_completed": false,
+        "priority": "Standard",
+        "task_type": 16,
+        "assignees": [
+            9
+        ]
+    }
+}
+]

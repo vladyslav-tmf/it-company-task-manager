@@ -1,0 +1,609 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-02 05:17+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\accounts\forms.py:18 .\templates\accounts\worker_detail.html:22
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: .\accounts\forms.py:28 .\templates\accounts\worker_detail.html:20
+#: .\templates\accounts\worker_list.html:25
+msgid "First name"
+msgstr "Ім'я"
+
+#: .\accounts\forms.py:38 .\templates\accounts\worker_detail.html:21
+#: .\templates\accounts\worker_list.html:26
+msgid "Last name"
+msgstr "Прізвище"
+
+#: .\accounts\forms.py:44
+msgid "Please choose a position"
+msgstr "Будь ласка, оберіть посаду"
+
+#: .\accounts\forms.py:64
+msgid "Search by Username"
+msgstr "Пошук за Логіном"
+
+#: .\accounts\services\email_service.py:10
+msgid "Activation link has been sent to your email"
+msgstr "Посилання для активації надіслано на вашу електронну пошту"
+
+#: .\accounts\views.py:44 .\accounts\views.py:104
+#: .\templates\accounts\worker_list.html:24
+msgid "Username"
+msgstr "Логін"
+
+#: .\accounts\views.py:45 .\accounts\views.py:105
+msgid "Password"
+msgstr "Пароль"
+
+#: .\accounts\views.py:46
+msgid "Password check"
+msgstr "Підтвердження паролю"
+
+#: .\accounts\views.py:69
+msgid "Please confirm your activation link in your email."
+msgstr "Будь ласка, підтвердіть активацію облікового запису на своїй пошті."
+
+#: .\accounts\views.py:84
+msgid "Your account is already activated."
+msgstr "Ваш обліковий запис вже активовано."
+
+#: .\accounts\views.py:90
+msgid ""
+"Thank you for your email confirmation. Now you can sign in to your account."
+msgstr ""
+"Дякуємо за підтвердження вашої електронної пошти. Тепер ви можете увійти до "
+"свого облікового запису."
+
+#: .\accounts\views.py:93
+msgid "Activation link is invalid or has already been used."
+msgstr "Посилання для активації недійсне або вже було використано."
+
+#: .\accounts\views.py:129
+msgid "Invalid credentials"
+msgstr "Невірні облікові дані"
+
+#: .\tasks\forms.py:47
+msgid "Search by task name"
+msgstr "Пошук за назвою задачі"
+
+#: .\tasks\forms.py:56
+msgid "Search by task type name"
+msgstr "Пошук за назвою типу задачі"
+
+#: .\tasks\forms.py:65
+msgid "Search by position name"
+msgstr "Пошук за назвою посади"
+
+#: .\tasks\views.py:78 .\templates\tasks\task_list.html:26
+msgid "Name"
+msgstr "Назва"
+
+#: .\tasks\views.py:79
+#, fuzzy
+#| msgid "Task Type"
+#| msgid_plural "Task Types"
+msgid "Task type"
+msgstr "Тип задач"
+
+#: .\tasks\views.py:80
+#, fuzzy
+#| msgid "Completed"
+msgid "Is completed"
+msgstr "Завершена"
+
+#: .\tasks\views.py:81 .\templates\tasks\task_detail.html:32
+msgid "Description"
+msgstr "Опис"
+
+#: .\tasks\views.py:82 .\templates\tasks\task_detail.html:20
+#: .\templates\tasks\task_list.html:27
+msgid "Deadline"
+msgstr "Кінцевий термін"
+
+#: .\tasks\views.py:83 .\templates\tasks\task_detail.html:21
+#: .\templates\tasks\task_list.html:28
+msgid "Priority"
+msgstr "Пріоритет"
+
+#: .\tasks\views.py:84
+#, fuzzy
+#| msgid "Assigned to"
+msgid "Assignees"
+msgstr "Призначено"
+
+#: .\templates\accounts\account_activation_email.html:7
+msgid "Account Activation"
+msgstr "Активація облікового запису"
+
+#: .\templates\accounts\account_activation_email.html:52
+msgid "Hello"
+msgstr "Привіт"
+
+#: .\templates\accounts\account_activation_email.html:53
+msgid ""
+"Thank you for signing up! To complete your registration, please activate "
+"your account by clicking the button below"
+msgstr ""
+"Дякуємо за реєстрацію! Щоб її завершити, будь ласка, активуйте свій "
+"обліковий запис, натиснувши кнопку нижче"
+
+#: .\templates\accounts\account_activation_email.html:54
+msgid "Activate Account"
+msgstr "Активувати обліковий запис"
+
+#: .\templates\accounts\account_activation_email.html:55
+msgid "If you didn't sign up for this account, please ignore this email"
+msgstr ""
+"Якщо ви не реєстрували цей обліковий запис, будь ласка, проігноруйте цей лист"
+
+#: .\templates\accounts\worker_confirm_delete.html:6
+msgid "Delete Worker"
+msgstr "Видалення працівника"
+
+#: .\templates\accounts\worker_confirm_delete.html:17
+#: .\templates\tasks\position_confirm_delete.html:18
+#: .\templates\tasks\task_confirm_delete.html:18
+#: .\templates\tasks\task_type_confirm_delete.html:18
+msgid "Confirm Deletion"
+msgstr "Підтвердження видалення"
+
+#: .\templates\accounts\worker_confirm_delete.html:19
+msgid "Are you sure you want to delete the worker"
+msgstr "Ви впевнені, що хочете видалити працівника"
+
+#: .\templates\accounts\worker_confirm_delete.html:25
+#: .\templates\tasks\position_confirm_delete.html:26
+#: .\templates\tasks\task_confirm_delete.html:26
+#: .\templates\tasks\task_type_confirm_delete.html:24
+msgid "This action cannot be undone"
+msgstr "Ця дія незворотня"
+
+#: .\templates\accounts\worker_confirm_delete.html:31
+msgid "You cannot delete yourself"
+msgstr "Ви не можете видалити себе"
+
+#: .\templates\accounts\worker_confirm_delete.html:38
+#: .\templates\tasks\position_confirm_delete.html:39
+#: .\templates\tasks\task_confirm_delete.html:36
+#: .\templates\tasks\task_type_confirm_delete.html:37
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#: .\templates\accounts\worker_confirm_delete.html:47
+#: .\templates\tasks\position_confirm_delete.html:47
+#: .\templates\tasks\task_confirm_delete.html:44
+#: .\templates\tasks\task_type_confirm_delete.html:45
+msgid "Changed your mind?"
+msgstr "Передумали?"
+
+#: .\templates\accounts\worker_confirm_delete.html:48
+#: .\templates\tasks\position_confirm_delete.html:48
+#: .\templates\tasks\task_confirm_delete.html:45
+#: .\templates\tasks\task_type_confirm_delete.html:46
+msgid "Go Back"
+msgstr "Повернутися назад"
+
+#: .\templates\accounts\worker_detail.html:5
+#: .\templates\accounts\worker_detail.html:11
+msgid "Worker Detail"
+msgstr "Деталі працівника"
+
+#: .\templates\accounts\worker_detail.html:23
+#: .\templates\accounts\worker_list.html:27 .\templates\tasks\index.html:46
+#: .\templates\tasks\position_form.html:11
+#: .\templates\tasks\position_form.html:23
+msgid "Position"
+msgid_plural "Positions"
+msgstr[0] "Посада"
+msgstr[1] "Посади"
+msgstr[2] "Посад"
+msgstr[3] "Посад"
+
+#: .\templates\accounts\worker_detail.html:24
+msgid "Assigned to (Completed Tasks)"
+msgstr "Призначено (Завершені задачі)"
+
+#: .\templates\accounts\worker_detail.html:35
+msgid "Assigned to (Pending Tasks)"
+msgstr "Призначено (Невиконані задачі)"
+
+#: .\templates\accounts\worker_detail.html:43
+msgid "No pending tasks"
+msgstr "Немає невиконаних задач"
+
+#: .\templates\accounts\worker_detail.html:48
+#: .\templates\accounts\worker_list.html:41
+#: .\templates\tasks\position_form.html:7
+#: .\templates\tasks\position_form.html:19
+#: .\templates\tasks\position_list.html:27
+#: .\templates\tasks\task_detail.html:56 .\templates\tasks\task_list.html:52
+#: .\templates\tasks\task_type_list.html:26
+msgid "Edit"
+msgstr "Редагувати"
+
+#: .\templates\accounts\worker_detail.html:49
+#: .\templates\accounts\worker_list.html:42
+#: .\templates\tasks\position_list.html:28
+#: .\templates\tasks\task_detail.html:57 .\templates\tasks\task_list.html:53
+#: .\templates\tasks\task_type_list.html:27
+msgid "Delete"
+msgstr "Видалити"
+
+#: .\templates\accounts\worker_detail.html:50
+#: .\templates\tasks\task_detail.html:58
+msgid "Back to List"
+msgstr "Повернутися до списку"
+
+#: .\templates\accounts\worker_form.html:6
+#: .\templates\accounts\worker_form.html:12
+msgid "Edit Worker"
+msgstr "Редагування працівника"
+
+#: .\templates\accounts\worker_form.html:25
+msgid "Update Worker"
+msgstr "Оновити працівника"
+
+#: .\templates\accounts\worker_list.html:5
+#: .\templates\accounts\worker_list.html:14
+msgid "Worker List"
+msgstr "Список працівників"
+
+#: .\templates\accounts\worker_list.html:16
+msgid "Register New Worker"
+msgstr "Зареєструвати нового працівника"
+
+#: .\templates\accounts\worker_list.html:28 .\templates\tasks\task_list.html:30
+msgid "Actions"
+msgstr "Дії"
+
+#: .\templates\accounts\worker_list.html:40 .\templates\tasks\task_list.html:51
+msgid "Details"
+msgstr "Деталі"
+
+#: .\templates\accounts\worker_list.html:52
+msgid "No workers found. Click \"REGISTER NEW WORKER\" to add one!"
+msgstr ""
+"Працівників не знайдено. Натисніть \"ЗАРЕЄСТРУВАТИ НОВОГО ПРАЦІВНИКА\", щоб "
+"додати нового!"
+
+#: .\templates\includes\navigation.html:28
+msgid "Pages"
+msgstr "Сторінки"
+
+#: .\templates\includes\navigation.html:34
+msgid "Tasks"
+msgstr "Задачі"
+
+#: .\templates\includes\navigation.html:37
+msgid "Workers"
+msgstr "Працівники"
+
+#: .\templates\includes\navigation.html:40
+msgid "Positions"
+msgstr "Посади"
+
+#: .\templates\includes\navigation.html:43
+msgid "Task Types"
+msgstr "Типи задач"
+
+#: .\templates\includes\navigation.html:56
+msgid "Logout"
+msgstr "Вийти"
+
+#: .\templates\includes\navigation.html:66
+msgid "Project on"
+msgstr "Проєкт на"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Logged Out"
+msgstr "Вихід"
+
+#: .\templates\registration\logged_out.html:18
+msgid "You have been logged out"
+msgstr "Ви вийшли з облікового запису"
+
+#: .\templates\registration\logged_out.html:20
+msgid ""
+"Thank you for using our service. You can sign in again using the link below"
+msgstr ""
+"Дякуємо, що користуєтесь нашим сервісом. Ви можете увійти ще раз за "
+"посиланням нижче"
+
+#: .\templates\registration\logged_out.html:25
+#: .\templates\registration\login.html:24
+msgid "Sign In"
+msgstr "Увійти"
+
+#: .\templates\registration\login.html:7
+#: .\templates\registration\register.html:90
+msgid "Sign IN"
+msgstr "Увійти"
+
+#: .\templates\registration\login.html:22
+msgid "Welcome back!"
+msgstr "Ласкаво просимо назад!"
+
+#: .\templates\registration\login.html:37
+#: .\templates\registration\register.html:26
+msgid "Add your credentials"
+msgstr "Вкажіть свої облікові дані"
+
+#: .\templates\registration\login.html:54
+msgid "Remember me"
+msgstr "Запам'ятати мене"
+
+#: .\templates\registration\login.html:59
+msgid "Sign in"
+msgstr "Увійти"
+
+#: .\templates\registration\login.html:68
+msgid "Don't have an account?"
+msgstr "Не маєте облікового запису?"
+
+#: .\templates\registration\login.html:69
+#: .\templates\registration\register.html:7
+#: .\templates\registration\register.html:18
+msgid "Sign UP"
+msgstr "Реєстрація"
+
+#: .\templates\registration\login.html:75
+msgid "You are already logged in. Go to"
+msgstr "Ви вже авторизовані. Перейти до"
+
+#: .\templates\registration\login.html:76 .\templates\tasks\index.html:6
+msgid "Home Page"
+msgstr "Головна сторінка"
+
+#: .\templates\registration\register.html:75
+msgid "Agree with"
+msgstr "Погоджуюсь з"
+
+#: .\templates\registration\register.html:75
+msgid "terms"
+msgstr "умовами"
+
+#: .\templates\registration\register.html:81
+msgid "Register"
+msgstr "Зареєструвати"
+
+#: .\templates\registration\register.html:89
+msgid "Have an account?"
+msgstr "Маєте обліковий запис"
+
+#: .\templates\tasks\index.html:21
+msgid "Task"
+msgid_plural "Tasks"
+msgstr[0] "Задача"
+msgstr[1] "Задачі" 
+msgstr[2] "Задач"
+msgstr[3] "Задач"
+
+#: .\templates\tasks\index.html:23
+msgid "Number of tasks in the system"
+msgstr "Кількість задач у системі"
+
+#: .\templates\tasks\index.html:33
+msgid "Worker"
+msgid_plural "Workers"
+msgstr[0] "Працівник"
+msgstr[1] "Працівники"
+msgstr[2] "Працівників"
+msgstr[3] "Працівників"
+
+#: .\templates\tasks\index.html:36
+msgid "Number of workers in the system"
+msgstr "Кількість працівників у системі"
+
+#: .\templates\tasks\index.html:49
+msgid "Number of positions in the system"
+msgstr "Кількість посад у системі"
+
+#: .\templates\tasks\index.html:59 .\templates\tasks\task_detail.html:22
+msgid "Task Type"
+msgid_plural "Task Types"
+msgstr[0] "Тип задачі"
+msgstr[1] "Типи задач"
+msgstr[2] "Типів задач"
+msgstr[3] "Типів задач"
+
+#: .\templates\tasks\index.html:61
+msgid "Number of task types in the system"
+msgstr "Кількість типів задач у системі"
+
+#: .\templates\tasks\index.html:71
+msgid "Pending task"
+msgid_plural "Pending tasks"
+msgstr[0] "Невиконана задача"
+msgstr[1] "Невиконані задачі"
+msgstr[2] "Невиконаних задач"
+msgstr[3] "Невиконаних задач"
+
+#: .\templates\tasks\index.html:73
+msgid "Number of pending tasks assigned to you"
+msgstr "Кількість невиконаних задач, призначених вам"
+
+#: .\templates\tasks\index.html:83
+msgid "Visit"
+msgid_plural "Visits"
+msgstr[0] "Візит"
+msgstr[1] "Візити"
+msgstr[2] "Візитів"
+msgstr[3] "Візитів"
+
+#: .\templates\tasks\index.html:85
+msgid "Number of your visits to this page"
+msgstr "Кількість ваших візитів до цієї сторінки"
+
+#: .\templates\tasks\position_confirm_delete.html:6
+msgid "Delete Position"
+msgstr "Видалення посади"
+
+#: .\templates\tasks\position_confirm_delete.html:20
+msgid "Are you sure you want to delete the position"
+msgstr "Ви впевнені, що хочете видалити посаду"
+
+#: .\templates\tasks\position_confirm_delete.html:29
+#: .\templates\tasks\task_type_confirm_delete.html:27
+msgid "Warning"
+msgstr "Увага"
+
+#: .\templates\tasks\position_confirm_delete.html:29
+msgid "Deleting this position will also remove all workers associated with it"
+msgstr ""
+"Видалення цієї посади також призведе до видалення усіх працівників, "
+"пов'язаних з нею"
+
+#: .\templates\tasks\position_form.html:9
+#: .\templates\tasks\position_form.html:21
+msgid "Create"
+msgstr "Створити"
+
+#: .\templates\tasks\position_form.html:39
+msgid "Update Position"
+msgstr "Оновити посаду"
+
+#: .\templates\tasks\position_form.html:41
+msgid "Create Position"
+msgstr "Створити посаду"
+
+#: .\templates\tasks\position_list.html:5
+#: .\templates\tasks\position_list.html:14
+msgid "Position List"
+msgstr "Список посад"
+
+#: .\templates\tasks\position_list.html:17
+msgid "Create New Position"
+msgstr "Створити нову посаду"
+
+#: .\templates\tasks\position_list.html:36
+msgid "No positions found. Click \"CREATE NEW POSITION\" to add one"
+msgstr ""
+"Не знайдено жодної посади. Натисніть \"СТВОРИТИ НОВУ ПОСАДУ\", щоб додати "
+"нову"
+
+#: .\templates\tasks\task_confirm_delete.html:6
+msgid "Delete Task"
+msgstr "Видалення задачі"
+
+#: .\templates\tasks\task_confirm_delete.html:20
+msgid "Are you sure you want to delete the task"
+msgstr "Ви впевнені, що хочете видалити цю задачу"
+
+#: .\templates\tasks\task_detail.html:5 .\templates\tasks\task_detail.html:11
+msgid "Task Detail"
+msgstr "Деталі задачі"
+
+#: .\templates\tasks\task_detail.html:23 .\templates\tasks\task_list.html:29
+msgid "Status"
+msgstr "Статус"
+
+#: .\templates\tasks\task_detail.html:26 .\templates\tasks\task_list.html:44
+msgid "Completed"
+msgstr "Завершена"
+
+#: .\templates\tasks\task_detail.html:28 .\templates\tasks\task_list.html:46
+msgid "Pending"
+msgstr "Незавершена"
+
+#: .\templates\tasks\task_detail.html:33
+msgid "Assigned to"
+msgstr "Призначено"
+
+#: .\templates\tasks\task_detail.html:46
+msgid "Remove Me from the Task"
+msgstr "Прибрати себе із задачі"
+
+#: .\templates\tasks\task_detail.html:51
+msgid "Assign Me to the Task"
+msgstr "Призначити себе до задачі"
+
+#: .\templates\tasks\task_form.html:7 .\templates\tasks\task_form.html:18
+msgid "Edit Task"
+msgstr "Редагування задачі"
+
+#: .\templates\tasks\task_form.html:9 .\templates\tasks\task_form.html:20
+#: .\templates\tasks\task_form.html:38
+msgid "Create Task"
+msgstr "Створити задачу"
+
+#: .\templates\tasks\task_form.html:36
+msgid "Update Task"
+msgstr "Оновити задачу"
+
+#: .\templates\tasks\task_list.html:5 .\templates\tasks\task_list.html:14
+msgid "Task List"
+msgstr "Список задач"
+
+#: .\templates\tasks\task_list.html:17
+msgid "Create New Task"
+msgstr "Створити нову задачу"
+
+#: .\templates\tasks\task_list.html:63
+msgid "No tasks found. Click \"CREATE NEW TASK\" to add one!"
+msgstr ""
+"Не знайдено жодної задачі. Натисни на \"СТВОРИТИ НОВУ ЗАДАЧУ\", щоб створити "
+"нову"
+
+#: .\templates\tasks\task_type_confirm_delete.html:6
+msgid "Delete Task Type"
+msgstr "Видалення типу задач"
+
+#: .\templates\tasks\task_type_confirm_delete.html:20
+msgid "Are you sure you want to delete the task type"
+msgstr "Ви впевнені, що хочете видалити тип задач"
+
+#: .\templates\tasks\task_type_confirm_delete.html:27
+msgid "Deleting this task type will also remove all tasks associated with it"
+msgstr ""
+"Видалення цього типу задач призведе до видалення усіх задач, пов'язаних з ним"
+
+#: .\templates\tasks\task_type_form.html:7
+#: .\templates\tasks\task_type_form.html:18
+msgid "Edit Task Type"
+msgstr "Редагування типу задач"
+
+#: .\templates\tasks\task_type_form.html:9
+#: .\templates\tasks\task_type_form.html:20
+#: .\templates\tasks\task_type_form.html:39
+msgid "Create Task Type"
+msgstr "Створити тип задач"
+
+#: .\templates\tasks\task_type_form.html:37
+msgid "Update Task Type"
+msgstr "Оновити тип задач"
+
+#: .\templates\tasks\task_type_list.html:5
+#: .\templates\tasks\task_type_list.html:14
+msgid "Task Type List"
+msgstr "Список типів задач"
+
+#: .\templates\tasks\task_type_list.html:16
+msgid "Create New Task Type"
+msgstr "Створити новий тип задач"
+
+#: .\templates\tasks\task_type_list.html:34
+msgid "No task types found. Click \"CREATE NEW TASK TYPE\" to add one!"
+msgstr ""
+"Жодного типу задач не знайдено. Натисни \"СТВОРИТИ НОВИЙ ТИП ЗАДАЧ\", щоб "
+"додати новий"
