@@ -1,85 +1,86 @@
-from django.urls import path
+from django.urls import include, path
 
 from tasks import views
 
 app_name = "tasks"
 
-urlpatterns = [
-    # Index url:
+task_patterns = [
     path(
         "",
-        views.IndexView.as_view(),
-        name="index",
-    ),
-
-    # Task urls:
-    path(
-        "tasks/",
         views.TaskListView.as_view(),
         name="task-list",
     ),
     path(
-        "tasks/create/",
+        "create/",
         views.TaskCreateView.as_view(),
         name="task-create",
     ),
     path(
-        "tasks/<int:pk>/",
+        "<int:pk>/",
         views.TaskDetailView.as_view(),
         name="task-detail",
     ),
     path(
-        "tasks/<int:pk>/update/",
+        "<int:pk>/update/",
         views.TaskUpdateView.as_view(),
         name="task-update",
     ),
     path(
-        "tasks/<int:pk>/delete/",
+        "<int:pk>/delete/",
         views.TaskDeleteView.as_view(),
         name="task-delete",
     ),
+]
 
-    # Task type urls:
+task_type_patterns = [
     path(
-        "task-types/",
+        "",
         views.TaskTypeListView.as_view(),
         name="task-type-list",
     ),
     path(
-        "task-types/create/",
+        "create/",
         views.TaskTypeCreateView.as_view(),
         name="task-type-create",
     ),
     path(
-        "task-types/<int:pk>/update/",
+        "<int:pk>/update/",
         views.TaskTypeUpdateView.as_view(),
         name="task-type-update",
     ),
     path(
-        "task-types/<int:pk>/delete/",
+        "<int:pk>/delete/",
         views.TaskTypeDeleteView.as_view(),
         name="task-type-delete",
     ),
+]
 
-    # Position urls:
+position_patterns = [
     path(
-        "positions/",
+        "",
         views.PositionListView.as_view(),
         name="position-list",
     ),
     path(
-        "positions/create/",
+        "create/",
         views.PositionCreateView.as_view(),
         name="position-create",
     ),
     path(
-        "positions/<int:pk>/update",
+        "<int:pk>/update",
         views.PositionUpdateView.as_view(),
         name="position-update",
     ),
     path(
-        "positions/<int:pk>/delete/",
+        "<int:pk>/delete/",
         views.PositionDeleteView.as_view(),
         name="position-delete",
     ),
+]
+
+urlpatterns = [
+    path("", views.IndexView.as_view(), name="index"),
+    path("tasks/", include(task_patterns)),
+    path("task-types/", include(task_type_patterns)),
+    path("positions/", include(position_patterns)),
 ]

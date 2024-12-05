@@ -54,7 +54,6 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     paginate_by = 5
     context_object_name = "tasks"
-    queryset = Task.objects.all()
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -64,16 +63,19 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self) -> QuerySet[Task]:
         name = self.request.GET.get("name")
+        queryset = Task.objects.all()
 
         if name:
-            return self.queryset.filter(name__icontains=name)
+            return queryset.filter(name__icontains=name)
 
-        return self.queryset
+        return queryset
 
 
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
-    queryset = Task.objects.select_related("task_type").prefetch_related("assignees")
+
+    def get_queryset(self) -> QuerySet[Task]:
+        return Task.objects.select_related("task_type").prefetch_related("assignees")
 
 
 class TaskFormMixin:
@@ -124,7 +126,6 @@ class TaskTypeListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 6
     context_object_name = "task_types"
     template_name = "tasks/task_type_list.html"
-    queryset = TaskType.objects.order_by("name")
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -134,11 +135,12 @@ class TaskTypeListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self) -> QuerySet[TaskType]:
         name = self.request.GET.get("name")
+        queryset = TaskType.objects.order_by("name")
 
         if name:
-            return self.queryset.filter(name__icontains=name)
+            return queryset.filter(name__icontains=name)
 
-        return self.queryset
+        return queryset
 
 
 class TaskTypeCreateView(LoginRequiredMixin, generic.CreateView):
@@ -165,7 +167,6 @@ class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
     paginate_by = 6
     context_object_name = "positions"
-    queryset = Position.objects.order_by("name")
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -175,11 +176,12 @@ class PositionListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self) -> QuerySet[Position]:
         name = self.request.GET.get("name")
+        queryset = Position.objects.order_by("name")
 
         if name:
-            return self.queryset.filter(name__icontains=name)
+            return queryset.filter(name__icontains=name)
 
-        return self.queryset
+        return queryset
 
 
 class PositionCreateView(LoginRequiredMixin, generic.CreateView):

@@ -74,8 +74,7 @@ class WorkerRegisterView(generic.FormView):
 
 
 class WorkerActivateView(View):
-    @staticmethod
-    def get(request: HttpRequest, uid: str, token: str) -> HttpResponseRedirect:
+    def get(self, request: HttpRequest, uid: str, token: str) -> HttpResponseRedirect:
         try:
             uid = force_str(urlsafe_base64_decode(uid))
             user = User.objects.get(pk=uid)
@@ -149,23 +148,23 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
         context["search_form"] = WorkerSearchForm()
-
         return context
 
     def get_queryset(self) -> QuerySet[User]:
         username = self.request.GET.get("username")
+        queryset = User.objects.select_related("position")
 
         if username:
-            return User.objects.filter(username__icontains=username).select_related(
-                "position"
-            )
+            return queryset.filter(username__icontains=username)
 
-        return User.objects.select_related("position")
+        return queryset
 
 
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
     model = User
-    queryset = User.objects.select_related("position")
+
+    def get_queryset(self) -> QuerySet[User]:
+        return User.objects.select_related("position")
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -189,14 +188,12 @@ class WorkerDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 
 class ToggleAssignToTaskView(LoginRequiredMixin, View):
-    @staticmethod
-    def post(request: HttpRequest, pk: int, *args, **kwargs) -> HttpResponseRedirect:
+    def post(self, request: HttpRequest, pk: int, *args, **kwargs) -> HttpResponseRedirect:
         task = get_object_or_404(Task, id=pk)
         worker = request.user
 
         if task in worker.tasks.all():
             worker.tasks.remove(task)
-
         else:
             worker.tasks.add(task)
 
