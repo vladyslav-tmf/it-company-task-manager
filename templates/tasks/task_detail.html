@@ -1,0 +1,66 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "Task Detail" %}
+{% endblock title %}
+
+{% block content %}
+  <section class="pt-3 pb-4">
+    <div class="container">
+      <h2 class="text-center">{% translate "Task Detail" %}</h2>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">{{ task.name }}</h4>
+            </div>
+            <div class="card-body">
+
+              <p><strong>{% translate "Deadline" %}:</strong> {{ task.deadline }}</p>
+              <p><strong>{% translate "Priority" %}:</strong> {{ task.get_priority_display }}</p>
+              <p><strong>{% translate "Task Type" %}:</strong> {{ task.task_type.name }}</p>
+              <p><strong>{% translate "Status" %}:</strong>
+
+                {% if task.is_completed %}
+                  <span class="badge bg-success">{% translate "Completed" %}</span>
+                {% else %}
+                  <span class="badge bg-warning">{% translate "Pending" %}</span>
+                {% endif %}
+              </p>
+
+              <p><strong>{% translate "Description" %}:</strong> {{ task.description }}</p>
+              <p><strong>{% translate "Assigned to" %}:</strong>
+                {% for assignee in task.assignees.all %}
+                  <a href="{{ assignee.get_absolute_url }}" class="badge bg-primary">{{ assignee.get_full_name }}</a>
+                {% endfor %}
+              </p>
+            </div>
+            <div class="card-footer text-center">
+
+              <form method="post" action="{% url "accounts:toggle-assign" task.id %}" class="d-inline">
+                {% csrf_token %}
+
+                {% if request.user in task.assignees.all %}
+                  <button type="submit" class="btn btn-danger btn-sm">
+                    {% translate "Remove Me from the Task" %}
+                  </button>
+
+                {% else %}
+                  <button type="submit" class="btn btn-success btn-sm">
+                    {% translate "Assign Me to the Task" %}
+                  </button>
+                {% endif %}
+              </form>
+
+              <a href="{% url 'tasks:task-update' pk=task.id %}" class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
+              <a href="{% url 'tasks:task-delete' pk=task.id %}" class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+              <a href="{% url 'tasks:task-list' %}" class="btn btn-secondary btn-sm">{% translate "Back to List" %}</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

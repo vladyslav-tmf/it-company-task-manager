@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}
+  {% translate "Task List" %}
+{% endblock title %}
+
+{% block content %}
+  <section class="pt-3 pb-4">
+
+    {% include "includes/search_form.html" %}
+
+    <div class="container">
+      <h2 class="text-center">{% translate "Task List" %}</h2>
+
+      <div class="d-flex justify-content-center mb-3">
+        <a href="{% url "tasks:task-create" %}" class="btn btn-primary btn-sm">{% translate "Create New Task" %}</a>
+      </div>
+
+      <div class="table-responsive">
+        {% if tasks %}
+          <table class="table table-striped">
+            <thead>
+
+            <tr>
+              <th>{% translate "Name" %}</th>
+              <th>{% translate "Deadline" %}</th>
+              <th>{% translate "Priority" %}</th>
+              <th>{% translate "Status" %}</th>
+              <th>{% translate "Actions" %}</th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            {% for task in tasks %}
+              <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.deadline }}</td>
+                <td>{{ task.get_priority_display }}</td>
+                <td>
+
+                  {% if task.is_completed %}
+                    <span class="badge bg-success">{% translate "Completed" %}</span>
+                  {% else %}
+                    <span class="badge bg-warning">{% translate "Pending" %}</span>
+                  {% endif %}
+
+                </td>
+                <td>
+                  <a href="{{ task.get_absolute_url }}" class="btn btn-info btn-sm">{% translate "Details" %}</a>
+                  <a href='{% url "tasks:task-update" pk=task.id %}' class="btn btn-warning btn-sm">{% translate "Edit" %}</a>
+                  <a href='{% url "tasks:task-delete" pk=task.id %}' class="btn btn-danger btn-sm">{% translate "Delete" %}</a>
+                </td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        {% else %}
+
+          <div class="alert alert-danger text-white text-center mt-4" role="alert">
+            {% translate 'No tasks found. Click "CREATE NEW TASK" to add one!' %}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </section>
+{% endblock content %}
